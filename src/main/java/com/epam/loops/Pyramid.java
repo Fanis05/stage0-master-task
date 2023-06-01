@@ -4,7 +4,7 @@ public class Pyramid {
 
     public void printPyramid(int cathetusLength) {
         int count=0;
-        for (int i = 1; i<cathetusLength; i++){
+        for (int i = 1; i<=cathetusLength; i++){
 
             for (int j =cathetusLength; j>0; j--){
                if (j>i){
