@@ -7,6 +7,7 @@ public class Power {
         for (int i =1; i<=power; i++){
             result = result * numberToPrint;
         }
+        System.out.println(result);
 
 
     }

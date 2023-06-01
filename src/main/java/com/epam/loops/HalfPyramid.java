@@ -6,11 +6,12 @@ public class HalfPyramid {
         for (int i =1; i<=cathetusLength; i++){
             for (int j = cathetusLength; j>=1; j--){
                 if(j>i){
-                    System.out.println(" ");
+                    System.out.print(" ");
                 } else {
-                    System.out.println("*");
+                    System.out.print("*");
                 }
             }
+            System.out.println();
         }
 
     }

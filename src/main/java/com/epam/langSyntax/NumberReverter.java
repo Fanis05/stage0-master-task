@@ -10,6 +10,7 @@ public class NumberReverter {
             revent = revent*10+ temp;
             number = number/10;
         }
+        System.out.println(revent);
     }
 
 

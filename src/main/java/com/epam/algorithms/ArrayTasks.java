@@ -65,6 +65,7 @@ public class ArrayTasks {
         for (int i = 0; i<arr.length; i++) {
             if (arr[i] == number) {
                 index = i;
+                break;
             }
         }
         return index;
@@ -101,16 +102,18 @@ public class ArrayTasks {
         int numOfArr=0;
         int[] tempArr = new int[arr.length];
         int[] positiveArray;
+        int length = 0;
 
         for (int i = 0; i<arr.length; i++) {
             if (arr[i] > 0) {
                 tempArr[numOfArr] = arr[i];
                 numOfArr++;
+                length++;
             }
         }
-        positiveArray = new int[numOfArr];
-        System.arraycopy(tempArr, 0, positiveArray, 0,tempArr.length);
-        
+        positiveArray = new int[length];
+        System.arraycopy(tempArr, 0, positiveArray, 0, length);
+
         return positiveArray;
     }
 
@@ -124,7 +127,38 @@ public class ArrayTasks {
      * arr = [[3, 1, 2,], [3,2]] -> [[2, 3], [1, 2, 3]] arr = [[5, 4], [7]]       -> [[7], [4, 5]]
      */
     public int[][] sortRaggedArray(int[][] arr) {
-        return null;
+        int[][] result = new int[arr.length][1];
+        for (int i = 0; i < arr.length; i++) {
+            result[i][0] = arr[i].length;
+            for (int k = 0; k < arr[i].length; k++) {
+                for (int j = k + 1; j < arr[i].length; j++) {
+                    if (arr[i][k] > arr[i][j]) {
+                        int tmp = arr[i][k];
+                        arr[i][k] = arr[i][j];
+                        arr[i][j] = tmp;
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < result.length; i++) {
+            for (int j = i + 1; j < result.length; j++) {
+                if (result[i][0] > result[j][0]) {
+                    int tmp = result[i][0];
+                    result[i][0] = result[j][0];
+                    result[j][0] = tmp;
+                }
+            }
+        }
+        for (int i = 0; i < result.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if (result[i][0] == arr[j].length) {
+                    result[i] = arr[j];
+                    arr[j] = new int[0];
+                    break;
+                }
+            }
+        }
+        return result;
     }
 
 }
