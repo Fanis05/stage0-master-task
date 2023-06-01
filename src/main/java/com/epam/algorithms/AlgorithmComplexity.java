@@ -40,7 +40,7 @@ public class AlgorithmComplexity {
      */
     public Complexity twoCycleSorting() {
 
-        return Complexity.O_N_LOG_N;
+        return Complexity.O_N_2;
     }
 
 }

@@ -13,9 +13,6 @@ public class DaysInMonth {
             } else if(year>=0){
                 System.out.println("28");
             }
-            else {
-                System.out.println("invalid date");
-            }
         }
         System.out.println("invalid date");
     }
